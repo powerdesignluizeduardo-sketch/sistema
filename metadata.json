@@ -1,0 +1,7 @@
+{
+  "name": "Sistema BioCozinha",
+  "description": "Uma plataforma inteligente de nutrição funcional e culinária natural, organizada por pilares de saúde, tempo e economia para transformar sua alimentação em cura.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
