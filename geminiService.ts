@@ -2,9 +2,10 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { Recipe } from "./types";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-
 export async function generateMoreRecipes(categoryName: string, categoryDescription: string): Promise<Recipe[]> {
+  // Initialize right before use to ensure process.env.API_KEY is available
+  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  
   const response = await ai.models.generateContent({
     model: 'gemini-3-flash-preview',
     contents: `Você é um nutricionista funcional. Gere 3 novas receitas para a categoria "${categoryName}" (${categoryDescription}). 
